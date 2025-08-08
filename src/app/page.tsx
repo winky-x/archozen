@@ -38,13 +38,24 @@ export default function Home() {
           </div>
         </section>
 
-        <LogoCarousel />
-        <ProgramShowcase />
-        <CoachSpotlight />
-        <GalleryExperience />
-        <ArcheryTips />
-        <ContactSection />
-
+        <div className="bg-background">
+            <LogoCarousel />
+        </div>
+        <div className="bg-background">
+            <ProgramShowcase />
+        </div>
+        <div className="bg-background">
+            <CoachSpotlight />
+        </div>
+        <div className="bg-background">
+            <GalleryExperience />
+        </div>
+        <div className="bg-background">
+            <ArcheryTips />
+        </div>
+        <div className="bg-background">
+            <ContactSection />
+        </div>
       </main>
       <AppFooter />
     </div>

@@ -69,7 +69,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-background">
+    <section id="contact" className="py-24 sm:py-32">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-headline text-4xl md:text-5xl font-bold">Get In Touch</h2>
@@ -100,7 +100,7 @@ export default function ContactSection() {
                     <FormField control={contactForm.control} name="message" render={({ field }) => (
                       <FormItem><FormLabel>Your Message</FormLabel><FormControl><Textarea placeholder="Tell us how we can help..." className="min-h-[120px]" {...field} /></FormControl><FormMessage /></FormItem>
                     )} />
-                    <Button type="submit" className="w-full" size="lg">Send Message</Button>
+                    <Button type="submit" className="w-full transition-transform duration-300 hover:scale-105" size="lg">Send Message</Button>
                   </form>
                 </Form>
               </CardContent>
@@ -127,7 +127,7 @@ export default function ContactSection() {
                     <FormField control={joinForm.control} name="experience" render={({ field }) => (
                       <FormItem><FormLabel>Archery Experience</FormLabel><FormControl><Textarea placeholder="e.g., Beginner, a few years of recreational shooting, etc." {...field} /></FormControl><FormMessage /></FormItem>
                     )} />
-                    <Button type="submit" className="w-full" size="lg">Submit Application</Button>
+                    <Button type="submit" className="w-full transition-transform duration-300 hover:scale-105" size="lg">Submit Application</Button>
                   </form>
                 </Form>
               </CardContent>
