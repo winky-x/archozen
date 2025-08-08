@@ -14,13 +14,14 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-background">
       <AppHeader />
       <main className="flex-1">
-        <section id="hero" className="relative h-[80vh] min-h-[500px] max-h-[700px] w-full flex items-center justify-center text-center text-foreground overflow-hidden bg-background">
+        <section id="hero" className="relative h-screen min-h-[600px] w-full flex items-center justify-center text-center text-foreground overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background z-0"></div>
           <div className="relative z-10 p-4 animate-fade-in-up duration-1000">
-            <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight">
-              Find Your Focus
+            <h1 className="font-headline text-5xl md:text-8xl font-extrabold tracking-tight">
+              Master the Bow
             </h1>
             <p className="mt-4 max-w-2xl mx-auto font-body text-lg md:text-xl text-muted-foreground">
-              Welcome to ArchoZen Academy, where ancient discipline meets modern mastery. Elevate your archery skills with us.
+              Experience the ancient art of archery, reimagined for the modern age.
             </p>
             <div className="mt-8 flex justify-center gap-4">
               <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105">
