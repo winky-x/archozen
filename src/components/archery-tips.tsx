@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Lightbulb } from 'lucide-react';
@@ -30,11 +30,14 @@ type Category = keyof typeof tipsByCategory;
 
 export default function ArcheryTips() {
   const [selectedCategory, setSelectedCategory] = useState<Category>('form');
+  const [currentTip, setCurrentTip] = useState('');
 
-  const currentTip = useMemo(() => {
+  useEffect(() => {
+    // This needs to be in a useEffect to avoid hydration errors
     const tips = tipsByCategory[selectedCategory];
-    return tips[Math.floor(Math.random() * tips.length)];
+    setCurrentTip(tips[Math.floor(Math.random() * tips.length)]);
   }, [selectedCategory]);
+
 
   const handleCategoryChange = (value: string) => {
     setSelectedCategory(value as Category);

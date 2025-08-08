@@ -14,9 +14,10 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-background">
       <AppHeader />
       <main className="flex-1">
-        <section id="hero" className="relative h-screen min-h-[600px] w-full flex items-center justify-center text-center text-foreground overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background z-0"></div>
-          <div className="relative z-10 p-4 animate-fade-in-up duration-1000">
+        <section id="hero" className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center text-foreground overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-purple-900/30 to-background z-0"></div>
+           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+          <div className="relative z-10 p-4">
             <h1 className="font-headline text-5xl md:text-8xl font-extrabold tracking-tight">
               Master the Bow
             </h1>

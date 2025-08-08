@@ -28,7 +28,7 @@ const programs = [
 
 export default function ProgramShowcase() {
   return (
-    <section id="programs" className="py-24 sm:py-32 bg-background/70">
+    <section id="programs" className="py-24 sm:py-32">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-headline text-4xl md:text-5xl font-bold">Our Programs</h2>
@@ -38,7 +38,7 @@ export default function ProgramShowcase() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program) => (
-            <Card key={program.title} className="glassmorphic flex flex-col transition-all duration-300 ease-smooth hover:shadow-2xl hover:-translate-y-2">
+            <Card key={program.title} className="glassmorphic flex flex-col transition-all duration-300 ease-smooth hover:shadow-2xl hover:-translate-y-2 hover:bg-card/80">
               <CardHeader className="p-6">
                 <CardTitle className="font-headline text-2xl">{program.title}</CardTitle>
                 <CardDescription className="pt-2 text-base text-foreground/70">{program.description}</CardDescription>

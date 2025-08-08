@@ -88,5 +88,5 @@ body {
 }
 
 .glassmorphic {
-    @apply bg-card/10 backdrop-blur-xl border border-white/10 shadow-lg rounded-xl;
+  @apply bg-card/60 backdrop-blur-lg border border-white/10 shadow-lg;
 }
