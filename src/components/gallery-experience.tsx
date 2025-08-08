@@ -6,12 +6,12 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Card } from './ui/card';
 
 const galleryImages = [
-  { src: 'https://placehold.co/600x400.png', alt: 'Archer at full draw', dataAiHint: 'archer full draw' },
-  { src: 'https://placehold.co/600x800.png', alt: 'Close-up of an arrow nock', dataAiHint: 'arrow nock' },
-  { src: 'https://placehold.co/600x400.png', alt: 'Archery target with arrows', dataAiHint: 'archery target' },
-  { src: 'https://placehold.co/600x400.png', alt: 'Student receiving instruction', dataAiHint: 'archery lesson' },
-  { src: 'https://placehold.co/600x800.png', alt: 'A row of bows on a rack', dataAiHint: 'archery bows' },
-  { src: 'https://placehold.co/600x400.png', alt: 'Scenic outdoor archery range', dataAiHint: 'outdoor range' },
+  { src: '/images/gallery-1.png', alt: 'Archer at full draw', dataAiHint: 'archer full draw', width: 600, height: 400 },
+  { src: '/images/gallery-2.png', alt: 'Close-up of an arrow nock', dataAiHint: 'arrow nock', width: 600, height: 800 },
+  { src: '/images/gallery-3.png', alt: 'Archery target with arrows', dataAiHint: 'archery target', width: 600, height: 400 },
+  { src: '/images/gallery-4.png', alt: 'Student receiving instruction', dataAiHint: 'archery lesson', width: 600, height: 400 },
+  { src: '/images/gallery-5.png', alt: 'A row of bows on a rack', dataAiHint: 'archery bows', width: 600, height: 800 },
+  { src: '/images/gallery-6.png', alt: 'Scenic outdoor archery range', dataAiHint: 'outdoor range', width: 600, height: 400 },
 ];
 
 export default function GalleryExperience() {
@@ -38,9 +38,8 @@ export default function GalleryExperience() {
               <Image
                 src={image.src}
                 alt={image.alt}
-                data-ai-hint={image.dataAiHint}
-                width={600}
-                height={index === 1 || index === 4 ? 800 : 400}
+                width={image.width}
+                height={image.height}
                 className="w-full h-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />

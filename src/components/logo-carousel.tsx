@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 const logos = [
-    { src: "https://placehold.co/150x60.png", alt: "Sponsor One", dataAiHint: "brand logo" },
-    { src: "https://placehold.co/150x60.png", alt: "Sponsor Two", dataAiHint: "brand logo" },
-    { src: "https://placehold.co/150x60.png", alt: "Sponsor Three", dataAiHint: "brand logo" },
-    { src: "https://placehold.co/150x60.png", alt: "Sponsor Four", dataAiHint: "brand logo" },
-    { src: "https://placehold.co/150x60.png", alt: "Sponsor Five", dataAiHint: "brand logo" },
-    { src: "https://placehold.co/150x60.png", alt: "Sponsor Six", dataAiHint: "brand logo" },
-    { src: "https://placehold.co/150x60.png", alt: "Sponsor Seven", dataAiHint: "brand logo" },
-    { src: "https://placehold.co/150x60.png", alt: "Sponsor Eight", dataAiHint: "brand logo" },
+    { src: "/logos/logo-1.svg", alt: "Sponsor One" },
+    { src: "/logos/logo-2.svg", alt: "Sponsor Two" },
+    { src: "/logos/logo-3.svg", alt: "Sponsor Three" },
+    { src: "/logos/logo-4.svg", alt: "Sponsor Four" },
+    { src: "/logos/logo-5.svg", alt: "Sponsor Five" },
+    { src: "/logos/logo-6.svg", alt: "Sponsor Six" },
+    { src: "/logos/logo-7.svg", alt: "Sponsor Seven" },
+    { src: "/logos/logo-8.svg", alt: "Sponsor Eight" },
 ];
 
 const duplicatedLogos = [...logos, ...logos];
@@ -33,7 +33,6 @@ export default function LogoCarousel() {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  data-ai-hint={logo.dataAiHint}
                   width={150}
                   height={60}
                   className="w-auto h-10 object-contain"
