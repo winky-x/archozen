@@ -38,12 +38,12 @@ export default function Home() {
           </div>
         </section>
 
+        <LogoCarousel />
         <ProgramShowcase />
         <CoachSpotlight />
         <GalleryExperience />
         <ArcheryTips />
         <ContactSection />
-        <LogoCarousel />
 
       </main>
       <AppFooter />

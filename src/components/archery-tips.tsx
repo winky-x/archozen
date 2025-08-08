@@ -44,7 +44,7 @@ export default function ArcheryTips() {
   };
 
   return (
-    <section id="tips" className="py-24 sm:py-32">
+    <section id="tips" className="py-24 sm:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-headline text-4xl md:text-5xl font-bold">AI-Free Archery Tips</h2>
