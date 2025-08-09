@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
-import { ArcheryTargetIcon } from "./icons";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
 
@@ -22,8 +23,11 @@ const rightLinks = navLinks.slice(2);
 export default function AppHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -40,6 +44,11 @@ export default function AppHeader() {
       {label}
     </a>
   );
+  
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+
+  const logoSrc = mounted && currentTheme === 'dark' ? '/logos/logo-dark.svg' : '/logos/logo-light.svg';
+
 
   return (
     <header
@@ -57,9 +66,13 @@ export default function AppHeader() {
             ))}
           </nav>
           
-          <div className="flex-1 flex justify-center">
-            <a href="#" className="flex items-center gap-2">
-              <ArcheryTargetIcon className="h-8 w-8 text-primary" />
+          <div className="hidden md:flex flex-1 justify-center">
+             <a href="#" className="flex items-center gap-2">
+              {mounted ? (
+                  <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
+              ) : (
+                <div className="h-8 w-8" /> 
+              )}
             </a>
           </div>
 
@@ -70,8 +83,8 @@ export default function AppHeader() {
             <ThemeToggle />
           </nav>
 
-          <div className="md:hidden flex items-center gap-2">
-            <ThemeToggle />
+          {/* Mobile Header */}
+          <div className="md:hidden flex items-center justify-between w-full">
             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -83,9 +96,13 @@ export default function AppHeader() {
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-center p-4 border-b">
                      <a href="#" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                        <ArcheryTargetIcon className="h-8 w-8 text-primary" />
+                        {mounted ? (
+                            <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
+                        ) : (
+                            <div className="h-8 w-8" />
+                        )}
                       </a>
-                    <Button variant="ghost" size="icon" onClick={() => setMobileMenuMOpen(false)}>
+                    <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
                       <X className="h-6 w-6" />
                       <span className="sr-only">Close menu</span>
                     </Button>
@@ -103,6 +120,18 @@ export default function AppHeader() {
                 </div>
               </SheetContent>
             </Sheet>
+            
+            <div className="flex flex-1 justify-center">
+                <a href="#" className="flex items-center gap-2">
+                    {mounted ? (
+                        <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
+                    ) : (
+                        <div className="h-8 w-8" />
+                    )}
+                </a>
+            </div>
+
+            <ThemeToggle />
           </div>
         </div>
       </div>
