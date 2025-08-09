@@ -6,9 +6,10 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
+import { Separator } from "./ui/separator";
 
 const navLinks = [
   { href: "#programs", label: "Programs" },
@@ -93,34 +94,44 @@ export default function AppHeader() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-full max-w-xs bg-background p-0">
+              <SheetContent side="left" className="w-full max-w-xs bg-background p-0 flex flex-col">
                 <SheetHeader className="p-4 border-b">
                    <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                   <div className="flex justify-between items-center">
-                     <a href="#" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                        {mounted ? (
-                            <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
-                        ) : (
-                            <div className="h-8 w-8" />
-                        )}
-                      </a>
-                    <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
+                   <div className="flex items-center gap-4">
+                    <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} className="-ml-2">
                       <X className="h-6 w-6" />
                       <span className="sr-only">Close menu</span>
                     </Button>
+                     <a href="#" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+                        {mounted ? (
+                            <Image src={logoSrc} alt="ArchoZen Academy Logo" width={32} height={32} className="h-6 w-auto" />
+                        ) : (
+                            <div className="h-6 w-6" />
+                        )}
+                      </a>
                   </div>
                 </SheetHeader>
-                <div className="flex flex-col h-full">
-                  <nav className="flex flex-col p-4">
-                    {navLinks.map((link) => (
-                      <NavLink 
-                        key={link.href} 
-                        {...link} 
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="text-lg py-3 px-2 rounded-md"
-                      />
-                    ))}
+                <div className="flex-1 flex flex-col">
+                  <nav className="flex-1 p-4">
+                    <ul className="flex flex-col gap-1">
+                      {navLinks.map((link) => (
+                        <li key={link.href}>
+                          <a
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center justify-between py-3 px-2 rounded-md text-base font-medium text-foreground hover:bg-accent"
+                          >
+                            <span>{link.label}</span>
+                            <ChevronRight className="h-5 w-5 text-muted-foreground" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
                   </nav>
+                  <Separator />
+                  <div className="p-4">
+                     <ThemeToggle />
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -135,7 +146,9 @@ export default function AppHeader() {
                 </a>
             </div>
 
-            <ThemeToggle />
+            <div className="hidden">
+                 <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
