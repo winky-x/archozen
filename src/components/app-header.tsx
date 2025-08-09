@@ -16,6 +16,9 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
+const leftLinks = navLinks.slice(0, 2);
+const rightLinks = navLinks.slice(2);
+
 export default function AppHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,16 +51,25 @@ export default function AppHeader() {
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
-            <ArcheryTargetIcon className="h-8 w-8 text-primary" />
-            <span className="font-headline text-xl font-bold">ArchoZen Academy</span>
-          </a>
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
+          <nav className="hidden md:flex items-center gap-6 w-1/3">
+             {leftLinks.map((link) => (
+              <NavLink key={link.href} {...link} />
+            ))}
+          </nav>
+          
+          <div className="flex-1 flex justify-center">
+            <a href="#" className="flex items-center gap-2">
+              <ArcheryTargetIcon className="h-8 w-8 text-primary" />
+            </a>
+          </div>
+
+          <nav className="hidden md:flex items-center justify-end gap-6 w-1/3">
+            {rightLinks.map((link) => (
               <NavLink key={link.href} {...link} />
             ))}
             <ThemeToggle />
           </nav>
+
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -72,9 +84,8 @@ export default function AppHeader() {
                   <div className="flex justify-between items-center p-4 border-b">
                      <a href="#" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
                         <ArcheryTargetIcon className="h-8 w-8 text-primary" />
-                        <span className="font-headline text-lg font-bold">ArchoZen</span>
                       </a>
-                    <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="ghost" size="icon" onClick={() => setMobileMenuMOpen(false)}>
                       <X className="h-6 w-6" />
                       <span className="sr-only">Close menu</span>
                     </Button>
