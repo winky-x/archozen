@@ -38,7 +38,7 @@ export default function ProgramShowcase() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program) => (
-            <Card key={program.title} className="glassmorphic flex flex-col transition-all duration-300 ease-smooth hover:shadow-2xl hover:-translate-y-2 hover:bg-card/80">
+            <Card key={program.title} className="flex flex-col transition-all duration-300 ease-smooth hover:shadow-2xl hover:-translate-y-2">
               <CardHeader className="p-6">
                 <CardTitle className="font-headline text-2xl">{program.title}</CardTitle>
                 <CardDescription className="pt-2 text-base text-foreground/70">{program.description}</CardDescription>
@@ -54,7 +54,7 @@ export default function ProgramShowcase() {
                 </ul>
               </CardContent>
               <CardFooter className="p-6 flex justify-between items-center bg-transparent mt-auto">
-                 <p className="text-3xl font-bold font-headline text-primary">{program.price}</p>
+                 <p className="text-3xl font-bold font-headline text-foreground">{program.price}</p>
                  <p className="text-muted-foreground font-medium">{program.duration}</p>
               </CardFooter>
             </Card>

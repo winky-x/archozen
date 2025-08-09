@@ -51,7 +51,7 @@ export default function GalleryExperience() {
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
         <DialogContent className="max-w-4xl p-0 bg-transparent border-0">
           {selectedImage && (
-             <Card className="glassmorphic">
+             <Card>
                 <Image
                     src={selectedImage}
                     alt="Selected gallery image"

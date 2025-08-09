@@ -43,9 +43,9 @@ export default function CoachSpotlight() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {coaches.map((coach) => (
             <div key={coach.name} className="group overflow-hidden rounded-xl">
-              <Card className="glassmorphic h-full flex flex-col text-center items-center p-6 transition-all duration-500 ease-smooth group-hover:scale-105">
+              <Card className="h-full flex flex-col text-center items-center p-6 transition-all duration-300 ease-smooth">
                 <CardHeader className="p-0">
-                  <div className="relative h-32 w-32 rounded-full overflow-hidden border-4 border-accent">
+                  <div className="relative h-32 w-32 rounded-full overflow-hidden border-4 border-primary/20">
                     <Image
                       src={coach.image}
                       alt={`Portrait of ${coach.name}`}
@@ -56,7 +56,7 @@ export default function CoachSpotlight() {
                     />
                   </div>
                   <CardTitle className="font-headline text-2xl pt-4">{coach.name}</CardTitle>
-                  <CardDescription className="text-primary font-semibold">{coach.title}</CardDescription>
+                  <CardDescription className="text-muted-foreground font-semibold">{coach.title}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow p-0 pt-4">
                   <p className="text-foreground/70">{coach.bio}</p>

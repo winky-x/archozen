@@ -60,7 +60,7 @@ export default function ArcheryTips() {
         <div className="max-w-2xl mx-auto">
             <div className="flex flex-col sm:flex-row gap-4 items-center mb-6">
                  <Select onValueChange={handleCategoryChange} defaultValue={selectedCategory}>
-                    <SelectTrigger className="w-full sm:w-[200px] glassmorphic">
+                    <SelectTrigger className="w-full sm:w-[200px]">
                         <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
                     <SelectContent>
@@ -69,13 +69,13 @@ export default function ArcheryTips() {
                         <SelectItem value="mindset">Mindset</SelectItem>
                     </SelectContent>
                 </Select>
-                <Button onClick={getNewTip} className="w-full sm:w-auto transition-transform duration-300 hover:scale-105">
+                <Button onClick={getNewTip} variant="secondary" className="w-full sm:w-auto transition-transform duration-300 hover:scale-105">
                     Get a New Tip
                 </Button>
             </div>
-            <Card className="glassmorphic min-h-[160px]">
+            <Card>
               <CardHeader className="flex-row items-center gap-4 space-y-0 pb-2">
-                <div className="p-3 rounded-full bg-accent/50 border border-accent">
+                <div className="p-3 rounded-full bg-primary/10 border border-primary/20">
                     {categoryIcons[selectedCategory]}
                 </div>
                 <CardTitle className="font-headline text-2xl capitalize">{selectedCategory} Tip</CardTitle>

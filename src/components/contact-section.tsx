@@ -83,7 +83,7 @@ export default function ContactSection() {
             <TabsTrigger value="join">Join Our Academy</TabsTrigger>
           </TabsList>
           <TabsContent value="contact">
-            <Card className="glassmorphic">
+            <Card>
               <CardHeader>
                 <CardTitle className="font-headline">General Inquiry</CardTitle>
                 <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
@@ -107,7 +107,7 @@ export default function ContactSection() {
             </Card>
           </TabsContent>
           <TabsContent value="join">
-          <Card className="glassmorphic">
+          <Card>
               <CardHeader>
                 <CardTitle className="font-headline">Academy Application</CardTitle>
                 <CardDescription>Ready to take the next step? Tell us a bit about yourself.</CardDescription>

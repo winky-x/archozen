@@ -1,7 +1,6 @@
 
 "use client";
 
-import { useEffect, useState } from 'react';
 import AppHeader from "@/components/app-header";
 import AppFooter from "@/components/app-footer";
 import ProgramShowcase from "@/components/program-showcase";
@@ -15,58 +14,54 @@ import { ArrowRight } from "lucide-react";
 import Image from 'next/image';
 
 export default function Home() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
   return (
     <div className="flex flex-col min-h-screen bg-background overflow-x-hidden">
       <div 
         className="pointer-events-none fixed inset-0 z-0 transition duration-300"
         style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, hsl(var(--primary)/0.15), transparent 80%)`
+          background: `radial-gradient(circle at 50% 100%, hsl(250 100% 60% / 0.15), transparent 50%)`
         }}
       ></div>
       <AppHeader />
       <main className="flex-1">
         <section id="hero" className="relative w-full flex items-center justify-center text-foreground pt-32 pb-20 md:pt-48 md:pb-32">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative z-10 text-center md:text-left">
-                <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tight">
-                  Master the Bow
-                </h1>
-                <p className="mt-4 max-w-2xl mx-auto md:mx-0 font-body text-lg md:text-xl text-muted-foreground">
-                  Experience the ancient art of archery, reimagined for the modern age.
-                </p>
-                <div className="mt-8 flex justify-center md:justify-start">
-                  <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 glass-border">
-                    <a href="#programs">
-                      Explore Programs
-                      <ArrowRight />
-                    </a>
-                  </Button>
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-block rounded-full p-px mb-6 glass-border">
+                <div className="bg-background rounded-full px-4 py-1.5">
+                  <span className="font-medium text-sm">Now supercharged with ArchoZen</span>
                 </div>
               </div>
-              <div className="relative z-10 flex items-center justify-center">
-                <div className="w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                    <Image
-                      src="https://placehold.co/600x600.png"
-                      alt="Abstract 3D shape"
-                      width={600}
-                      height={600}
-                      className="object-cover w-full h-full"
-                      data-ai-hint="abstract glass shape"
-                    />
-                </div>
+              <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tight">
+                AI that builds with you
+              </h1>
+              <p className="mt-4 max-w-2xl mx-auto font-body text-lg md:text-xl text-muted-foreground">
+                Experience the ancient art of archery, reimagined for the modern age with our AI-powered coaching.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto">
+                  <a href="#programs">
+                    Get started for free
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="secondary" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto">
+                  <a href="#contact">
+                    See plans & pricing
+                  </a>
+                </Button>
+              </div>
+            </div>
+            <div className="relative mt-24">
+              <div className="absolute top-0 -inset-x-4 h-48 bg-gradient-to-t from-background to-transparent z-10"></div>
+              <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border/20">
+                  <Image
+                    src="https://placehold.co/1200x800.png"
+                    alt="AI Copilot Interface"
+                    width={1200}
+                    height={800}
+                    className="object-cover w-full h-full"
+                    data-ai-hint="ai chat interface"
+                  />
               </div>
             </div>
           </div>
@@ -75,19 +70,19 @@ export default function Home() {
         <div className="bg-background">
             <LogoCarousel />
         </div>
-        <div className="bg-background">
+        <div className="bg-secondary/50 dark:bg-card">
             <ProgramShowcase />
         </div>
         <div className="bg-background">
             <CoachSpotlight />
         </div>
-        <div className="bg-background">
+        <div className="bg-secondary/50 dark:bg-card">
             <GalleryExperience />
         </div>
         <div className="bg-background">
             <ArcheryTips />
         </div>
-        <div className="bg-background">
+        <div className="bg-secondary/50 dark:bg-card">
             <ContactSection />
         </div>
       </main>
