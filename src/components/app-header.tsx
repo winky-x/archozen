@@ -86,14 +86,14 @@ export default function AppHeader() {
 
           {/* Mobile Header */}
           <div className="md:hidden flex items-center justify-between w-full">
-            <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
+              <SheetContent side="left" className="w-full max-w-xs bg-background p-0">
                 <SheetHeader className="p-4 border-b">
                    <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                    <div className="flex justify-between items-center">
