@@ -48,7 +48,7 @@ export default function Home() {
                   Experience the ancient art of archery, reimagined for the modern age.
                 </p>
                 <div className="mt-8 flex justify-center md:justify-start">
-                  <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105">
+                  <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 glass-border">
                     <a href="#programs">
                       Explore Programs
                       <ArrowRight />
