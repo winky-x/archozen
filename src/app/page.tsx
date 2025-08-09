@@ -39,7 +39,7 @@ export default function Home() {
                 Experience the ancient art of archery, reimagined for the modern age with our AI-powered coaching.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-full glass-border">
+                <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-full bg-white text-black shadow-[0_0_20px_0px_hsl(var(--primary)/0.5)] hover:bg-gray-200">
                   <a href="#programs">
                     Get started for free
                   </a>
