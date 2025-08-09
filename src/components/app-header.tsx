@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import { ArcheryTargetIcon } from "./icons";
+import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
   { href: "#programs", label: "Programs" },
@@ -52,8 +53,10 @@ export default function AppHeader() {
             {navLinks.map((link) => (
               <NavLink key={link.href} {...link} />
             ))}
+            <ThemeToggle />
           </nav>
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">

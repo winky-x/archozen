@@ -53,9 +53,6 @@ export default function Home() {
                   <ArrowRight />
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="font-bold text-base transition-transform duration-300 hover:scale-105">
-                <a href="#contact">Join Now</a>
-              </Button>
             </div>
           </div>
         </section>
