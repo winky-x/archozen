@@ -94,24 +94,18 @@ export default function AppHeader() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-full max-w-xs bg-background p-0 flex flex-col">
-                <SheetHeader className="p-4 border-b">
+              <SheetContent side="left" className="w-3/4 bg-background p-0 flex flex-col">
+                <SheetHeader className="p-4 border-b flex flex-row items-center gap-4">
                    <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                   <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)} className="-ml-2">
-                      <X className="h-6 w-6" />
-                      <span className="sr-only">Close menu</span>
-                    </Button>
-                     <a href="#" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-                        {mounted ? (
-                            <Image src={logoSrc} alt="ArchoZen Academy Logo" width={32} height={32} className="h-6 w-auto" />
-                        ) : (
-                            <div className="h-6 w-6" />
-                        )}
-                      </a>
-                  </div>
+                   <a href="#" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+                      {mounted ? (
+                          <Image src={logoSrc} alt="ArchoZen Academy Logo" width={32} height={32} className="h-6 w-auto" />
+                      ) : (
+                          <div className="h-6 w-6" />
+                      )}
+                    </a>
                 </SheetHeader>
-                <div className="flex-1 flex flex-col">
+                <div className="flex-1 flex flex-col justify-between">
                   <nav className="flex-1 p-4">
                     <ul className="flex flex-col gap-1">
                       {navLinks.map((link) => (
@@ -124,11 +118,11 @@ export default function AppHeader() {
                             <span>{link.label}</span>
                             <ChevronRight className="h-5 w-5 text-muted-foreground" />
                           </a>
+                          <Separator />
                         </li>
                       ))}
                     </ul>
                   </nav>
-                  <Separator />
                   <div className="p-4">
                      <ThemeToggle />
                   </div>
