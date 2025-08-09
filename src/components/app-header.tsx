@@ -1,10 +1,11 @@
+
 "use client";
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
@@ -93,8 +94,9 @@ export default function AppHeader() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
-                <div className="flex flex-col h-full">
-                  <div className="flex justify-between items-center p-4 border-b">
+                <SheetHeader className="p-4 border-b">
+                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                   <div className="flex justify-between items-center">
                      <a href="#" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
                         {mounted ? (
                             <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
@@ -107,6 +109,8 @@ export default function AppHeader() {
                       <span className="sr-only">Close menu</span>
                     </Button>
                   </div>
+                </SheetHeader>
+                <div className="flex flex-col h-full">
                   <nav className="flex flex-col p-4">
                     {navLinks.map((link) => (
                       <NavLink 
