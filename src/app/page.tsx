@@ -27,13 +27,8 @@ export default function Home() {
     };
   }, []);
 
-  const transformStyle = {
-    transform: `translate(-50%, -50%) translateX(${mousePosition.x / -20}px) translateY(${mousePosition.y / -20}px) rotateX(${mousePosition.y / -40}deg) rotateY(${mousePosition.x / -40}deg)`,
-    transition: 'transform 0.1s ease-out',
-  };
-
   return (
-    <div className="flex flex-col min-h-screen bg-background overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-background overflow-x-hidden">
       <div 
         className="pointer-events-none fixed inset-0 z-0 transition duration-300"
         style={{
@@ -42,35 +37,37 @@ export default function Home() {
       ></div>
       <AppHeader />
       <main className="flex-1">
-        <section id="hero" className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center text-foreground overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-10"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,hsl(var(--primary)/0.1),rgba(255,255,255,0))] z-10"></div>
-          
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 opacity-30 dark:opacity-50" style={transformStyle}>
-            <Image
-              src="https://placehold.co/400x400.png"
-              alt="Abstract 3D shape"
-              width={400}
-              height={400}
-              className="object-contain"
-              data-ai-hint="abstract glass shape"
-            />
-          </div>
-
-          <div className="relative z-20 p-4">
-            <h1 className="font-headline text-5xl md:text-8xl font-extrabold tracking-tight">
-              Master the Bow
-            </h1>
-            <p className="mt-4 max-w-2xl mx-auto font-body text-lg md:text-xl text-muted-foreground">
-              Experience the ancient art of archery, reimagined for the modern age.
-            </p>
-            <div className="mt-8 flex justify-center gap-4">
-              <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105">
-                <a href="#programs">
-                  Explore Programs
-                  <ArrowRight />
-                </a>
-              </Button>
+        <section id="hero" className="relative w-full flex items-center justify-center text-foreground pt-32 pb-20 md:pt-48 md:pb-32">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="relative z-10 text-center md:text-left">
+                <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tight">
+                  Master the Bow
+                </h1>
+                <p className="mt-4 max-w-2xl mx-auto md:mx-0 font-body text-lg md:text-xl text-muted-foreground">
+                  Experience the ancient art of archery, reimagined for the modern age.
+                </p>
+                <div className="mt-8 flex justify-center md:justify-start">
+                  <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105">
+                    <a href="#programs">
+                      Explore Programs
+                      <ArrowRight />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+              <div className="relative z-10 flex items-center justify-center">
+                <div className="w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                    <Image
+                      src="https://placehold.co/600x600.png"
+                      alt="Abstract 3D shape"
+                      width={600}
+                      height={600}
+                      className="object-cover w-full h-full"
+                      data-ai-hint="abstract glass shape"
+                    />
+                </div>
+              </div>
             </div>
           </div>
         </section>
