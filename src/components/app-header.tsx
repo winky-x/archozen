@@ -54,11 +54,12 @@ export default function AppHeader() {
 
   return (
     <header
-      className={`fixed z-50 transition-all duration-300 ease-smooth ${
+      className={cn(
+        "fixed z-50 transition-all duration-300 ease-smooth",
         isScrolled 
           ? "top-0 left-0 right-0 bg-background/80 backdrop-blur-lg border-b rounded-b-xl" 
-          : "top-4 left-2 right-2 md:left-4 md:right-4 bg-transparent border-transparent rounded-xl"
-      }`}
+          : "top-4 left-2 right-2 md:left-4 md:right-4 bg-transparent border-transparent"
+      )}
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
@@ -87,50 +88,52 @@ export default function AppHeader() {
 
           {/* Mobile Header */}
           <div className="md:hidden flex items-center justify-between w-full">
-             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Open menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-3/4 bg-background p-0 flex flex-col">
-                <SheetHeader className="p-4 border-b flex flex-row items-center gap-4">
-                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                   <a href="#" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-                      {mounted ? (
-                          <Image src={logoSrc} alt="ArchoZen Academy Logo" width={32} height={32} className="h-6 w-auto" />
-                      ) : (
-                          <div className="h-6 w-6" />
-                      )}
-                    </a>
-                </SheetHeader>
-                <div className="flex-1 flex flex-col justify-between">
-                  <nav className="flex-1 p-4">
-                    <ul className="flex flex-col gap-1">
-                      {navLinks.map((link) => (
-                        <li key={link.href}>
-                          <a
-                            href={link.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="flex items-center justify-between py-3 px-2 rounded-md text-base font-medium text-foreground hover:bg-accent"
-                          >
-                            <span>{link.label}</span>
-                            <ChevronRight className="h-5 w-5 text-muted-foreground" />
-                          </a>
-                          <Separator />
-                        </li>
-                      ))}
-                    </ul>
-                  </nav>
-                  <div className="p-4">
-                     <ThemeToggle />
+            <div className="w-1/3">
+              <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Open menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-3/4 bg-background p-0 flex flex-col">
+                  <SheetHeader className="p-4 border-b flex flex-row items-center gap-4">
+                    <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                    <a href="#" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
+                        {mounted ? (
+                            <Image src={logoSrc} alt="ArchoZen Academy Logo" width={32} height={32} className="h-6 w-auto" />
+                        ) : (
+                            <div className="h-6 w-6" />
+                        )}
+                      </a>
+                  </SheetHeader>
+                  <div className="flex-1 flex flex-col justify-between">
+                    <nav className="flex-1 p-4">
+                      <ul className="flex flex-col gap-1">
+                        {navLinks.map((link) => (
+                          <li key={link.href}>
+                            <a
+                              href={link.href}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className="flex items-center justify-between py-3 px-2 rounded-md text-base font-medium text-foreground hover:bg-accent"
+                            >
+                              <span>{link.label}</span>
+                              <ChevronRight className="h-5 w-5 text-muted-foreground" />
+                            </a>
+                            <Separator />
+                          </li>
+                        ))}
+                      </ul>
+                    </nav>
+                    <div className="p-4 border-t">
+                      <ThemeToggle />
+                    </div>
                   </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                </SheetContent>
+              </Sheet>
+            </div>
             
-            <div className="flex flex-1 justify-center">
+            <div className="w-1/3 flex justify-center">
                 <a href="#" className="flex items-center gap-2">
                     {mounted ? (
                         <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
@@ -140,7 +143,7 @@ export default function AppHeader() {
                 </a>
             </div>
 
-            <div className="hidden">
+            <div className="w-1/3 flex justify-end">
                  <ThemeToggle />
             </div>
           </div>
