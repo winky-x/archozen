@@ -6,6 +6,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import { ArcheryTargetIcon } from "./icons";
 import { ThemeToggle } from "./theme-toggle";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "#programs", label: "Programs" },
@@ -27,11 +28,11 @@ export default function AppHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const NavLink = ({ href, label, onClick }: { href: string; label: string, onClick?: () => void }) => (
+  const NavLink = ({ href, label, onClick, className }: { href: string; label: string, onClick?: () => void, className?: string }) => (
     <a
       href={href}
       onClick={onClick}
-      className="font-body text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+      className={cn("font-body text-sm font-medium text-foreground/80 transition-colors hover:text-primary", className)}
     >
       {label}
     </a>
@@ -66,21 +67,26 @@ export default function AppHeader() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full max-w-xs bg-background p-6">
+              <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
                 <div className="flex flex-col h-full">
-                  <div className="flex justify-between items-center mb-8">
+                  <div className="flex justify-between items-center p-4 border-b">
                      <a href="#" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
                         <ArcheryTargetIcon className="h-8 w-8 text-primary" />
-                        <span className="font-headline text-xl font-bold">ArchoZen</span>
+                        <span className="font-headline text-lg font-bold">ArchoZen</span>
                       </a>
                     <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(false)}>
                       <X className="h-6 w-6" />
                       <span className="sr-only">Close menu</span>
                     </Button>
                   </div>
-                  <nav className="flex flex-col gap-6">
+                  <nav className="flex flex-col p-4">
                     {navLinks.map((link) => (
-                      <NavLink key={link.href} {...link} onClick={() => setMobileMenuOpen(false)} />
+                      <NavLink 
+                        key={link.href} 
+                        {...link} 
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-lg py-3 px-2 rounded-md"
+                      />
                     ))}
                   </nav>
                 </div>
