@@ -12,6 +12,7 @@ import ContactSection from "@/components/contact-section";
 import LogoCarousel from "@/components/logo-carousel";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from 'next/image';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -26,6 +27,11 @@ export default function Home() {
     };
   }, []);
 
+  const transformStyle = {
+    transform: `translate(-50%, -50%) translateX(${mousePosition.x / -20}px) translateY(${mousePosition.y / -20}px) rotateX(${mousePosition.y / -40}deg) rotateY(${mousePosition.x / -40}deg)`,
+    transition: 'transform 0.1s ease-out',
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-background overflow-hidden">
       <div 
@@ -37,9 +43,21 @@ export default function Home() {
       <AppHeader />
       <main className="flex-1">
         <section id="hero" className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center text-foreground overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-0"></div>
-           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,hsl(var(--primary)/0.1),rgba(255,255,255,0))]"></div>
-          <div className="relative z-10 p-4">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-10"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,hsl(var(--primary)/0.1),rgba(255,255,255,0))] z-10"></div>
+          
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 opacity-30 dark:opacity-50" style={transformStyle}>
+            <Image
+              src="https://placehold.co/400x400.png"
+              alt="Abstract 3D shape"
+              width={400}
+              height={400}
+              className="object-contain"
+              data-ai-hint="abstract glass shape"
+            />
+          </div>
+
+          <div className="relative z-20 p-4">
             <h1 className="font-headline text-5xl md:text-8xl font-extrabold tracking-tight">
               Master the Bow
             </h1>
