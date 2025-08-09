@@ -31,14 +31,14 @@ export default function Home() {
       <div 
         className="pointer-events-none fixed inset-0 z-0 transition duration-300"
         style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`
+          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, hsl(var(--primary)/0.15), transparent 80%)`
         }}
       ></div>
       <AppHeader />
       <main className="flex-1">
         <section id="hero" className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center text-foreground overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-purple-900/30 to-background z-0"></div>
-           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-0"></div>
+           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,hsl(var(--primary)/0.1),rgba(255,255,255,0))]"></div>
           <div className="relative z-10 p-4">
             <h1 className="font-headline text-5xl md:text-8xl font-extrabold tracking-tight">
               Master the Bow
