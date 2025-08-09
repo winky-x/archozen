@@ -39,8 +39,10 @@ export default function AppHeader() {
 
   return (
     <header
-      className={`fixed top-4 left-2 right-2 md:left-4 md:right-4 z-50 transition-all duration-300 ease-smooth rounded-xl ${
-        isScrolled ? "bg-background/80 backdrop-blur-lg border" : "bg-transparent border-transparent"
+      className={`fixed z-50 transition-all duration-300 ease-smooth ${
+        isScrolled 
+          ? "top-0 left-0 right-0 bg-background/80 backdrop-blur-lg border-b rounded-none" 
+          : "top-4 left-2 right-2 md:left-4 md:right-4 bg-transparent border-transparent rounded-xl"
       }`}
     >
       <div className="container mx-auto px-4">
