@@ -19,12 +19,12 @@ export default function Home() {
       <div 
         className="pointer-events-none fixed inset-0 z-0 transition duration-300"
         style={{
-          background: `radial-gradient(circle at 50% 100%, hsl(250 100% 60% / 0.15), transparent 50%)`
+          background: `radial-gradient(circle at 50% 0%, hsl(var(--primary) / 0.1), transparent 50%)`
         }}
       ></div>
       <AppHeader />
       <main className="flex-1">
-        <section id="hero" className="relative w-full flex items-center justify-center text-foreground pt-32 pb-20 md:pt-48 md:pb-32">
+        <section id="hero" className="relative w-full text-foreground pt-32 pb-20 md:pt-48 md:pb-32">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-block rounded-full p-px mb-6 glass-border">
@@ -39,12 +39,12 @@ export default function Home() {
                 Experience the ancient art of archery, reimagined for the modern age with our AI-powered coaching.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto">
+                <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-full glass-border">
                   <a href="#programs">
                     Get started for free
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="secondary" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto">
+                <Button asChild size="lg" variant="outline" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-full">
                   <a href="#contact">
                     See plans & pricing
                   </a>
@@ -53,13 +53,13 @@ export default function Home() {
             </div>
             <div className="relative mt-24">
               <div className="absolute top-0 -inset-x-4 h-48 bg-gradient-to-t from-background to-transparent z-10"></div>
-              <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl border border-border/20">
+              <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden glass-border p-px">
                   <Image
                     src="https://placehold.co/1200x800.png"
                     alt="AI Copilot Interface"
                     width={1200}
                     height={800}
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full rounded-xl"
                     data-ai-hint="ai chat interface"
                   />
               </div>
