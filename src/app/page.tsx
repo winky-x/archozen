@@ -82,7 +82,7 @@ export default function Home({}) {
             </div>
             <div className="relative mt-24">
               {isMounted && (
-                <div className="w-[90%] ml-auto md:mx-auto md:w-full md:max-w-4xl gradient-border-glow rounded-l-xl md:rounded-xl overflow-hidden md:overflow-visible">
+                <div className="w-[calc(100%-1rem)] ml-auto md:mx-auto md:w-full md:max-w-4xl gradient-border-glow rounded-l-xl md:rounded-xl overflow-hidden md:overflow-visible">
                   <Image
                       src="https://placehold.co/1200x800.png"
                       alt="AI Copilot Interface"
