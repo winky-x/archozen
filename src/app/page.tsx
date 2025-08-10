@@ -1,4 +1,3 @@
-
 "use client";
 
 import AppHeader from "@/components/app-header";
@@ -13,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from 'next/image';
 
-export default function Home({}: { params: {}; searchParams: {} }) {
+export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background overflow-x-hidden">
       <div className="fixed inset-0 z-[-1] overflow-hidden">
@@ -78,19 +77,19 @@ export default function Home({}: { params: {}; searchParams: {} }) {
         <div>
             <LogoCarousel />
         </div>
-        <div>
+        <div className="bg-secondary/50 dark:bg-card">
             <ProgramShowcase />
         </div>
-        <div>
+        <div className="bg-secondary/50 dark:bg-card">
             <CoachSpotlight />
         </div>
-        <div>
+        <div className="bg-secondary/50 dark:bg-card">
             <GalleryExperience />
         </div>
-        <div>
+        <div className="bg-secondary/50 dark:bg-card">
             <ArcheryTips />
         </div>
-        <div>
+        <div className="bg-secondary/50 dark:bg-card">
             <ContactSection />
         </div>
       </main>
