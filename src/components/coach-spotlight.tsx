@@ -10,23 +10,20 @@ const coaches = [
     bio: "With over 20 years of competitive archery experience, Elias founded ArchoZen to share his passion for the sport's mental and physical discipline.",
     image: "/coaches/coach-1.png",
     socials: { twitter: "#", linkedin: "#" },
-    dataAiHint: "portrait man"
   },
   {
     name: "Seraphina Moon",
     title: "Recurve Specialist",
     bio: "An Olympian archer, Seraphina specializes in the recurve bow, focusing on precision form and mental stillness under pressure.",
-    image: "/coaches/coach-2.png",
+    image: "/coaches/coach-1.png",
     socials: { twitter: "#", linkedin: "#" },
-    dataAiHint: "portrait woman"
   },
   {
     name: "Kenji Tanaka",
     title: "Kyudo Master",
     bio: "A master of the traditional Japanese art of Kyudo, Kenji brings a meditative and spiritual approach to the practice of archery.",
-    image: "/coaches/coach-3.png",
+    image: "/coaches/coach-1.png",
     socials: { twitter: "#", linkedin: "#" },
-    dataAiHint: "portrait asian man"
   },
 ];
 
@@ -51,7 +48,6 @@ export default function CoachSpotlight() {
                       alt={`Portrait of ${coach.name}`}
                       width={160}
                       height={160}
-                      data-ai-hint={coach.dataAiHint}
                       className="object-cover"
                     />
                   </div>
