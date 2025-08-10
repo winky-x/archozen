@@ -17,10 +17,12 @@ const navLinks = [
   { href: "#gallery", label: "Gallery" },
   { href: "#tips", label: "Tips" },
   { href: "#contact", label: "Contact" },
+  { href: "#dashboard", label: "Dashboard" },
 ];
 
 const leftLinks = navLinks.slice(0, 3);
-const rightLinks = navLinks.slice(3);
+const rightLinks = navLinks.slice(3, 5);
+const dashboardLink = navLinks[5];
 
 export default function AppHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -122,13 +124,13 @@ export default function AppHeader() {
           </div>
 
           <div className="flex items-center justify-start gap-6 w-1/3">
-            <nav className="hidden md:flex items-center gap-6 w-full">
+            <nav className="hidden md:flex items-center gap-6">
               {rightLinks.map((link) => (
                 <NavLink key={link.href} {...link} />
               ))}
             </nav>
-            <div className="flex items-center justify-end flex-1">
-                <Button variant="outline" className="hidden md:inline-flex mr-2">Dashboard</Button>
+            <div className="flex items-center justify-end flex-1 gap-2">
+                <NavLink href={dashboardLink.href} label={dashboardLink.label} className="hidden md:inline-flex" />
                 <ThemeToggle />
             </div>
           </div>

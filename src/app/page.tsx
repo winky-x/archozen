@@ -16,12 +16,6 @@ import CursorFollower from "@/components/cursor-follower";
 import MotionWrapper from "@/components/motion-wrapper";
 
 export default function Home({}) {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   return (
     <div className="flex flex-col min-h-screen bg-background overflow-x-hidden">
       <div className="fixed inset-0 z-[-1] overflow-hidden">
@@ -85,7 +79,6 @@ export default function Home({}) {
             </div>
             </div>
             <div className="relative mt-24">
-              {isMounted && (
                 <div className="w-[calc(100%-1rem)] ml-auto md:mx-auto md:w-full md:max-w-4xl gradient-border-glow rounded-l-xl md:rounded-xl">
                   <Image
                       src="https://placehold.co/1200x800.png"
@@ -96,7 +89,6 @@ export default function Home({}) {
                       data-ai-hint="ai chat interface"
                   />
                 </div>
-              )}
             </div>
         </section>
 
