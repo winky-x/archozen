@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider";
+import { Inter } from 'next/font/google'
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -8,13 +9,18 @@ export const metadata: Metadata = {
   description: 'Master the art of archery with world-class coaching.',
 };
 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className={`scroll-smooth ${inter.className}`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

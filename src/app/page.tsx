@@ -1,5 +1,3 @@
-"use client";
-
 import AppHeader from "@/components/app-header";
 import AppFooter from "@/components/app-footer";
 import ProgramShowcase from "@/components/program-showcase";
@@ -9,8 +7,8 @@ import ArcheryTips from "@/components/archery-tips";
 import ContactSection from "@/components/contact-section";
 import LogoCarousel from "@/components/logo-carousel";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Image from 'next/image';
+import CursorFollower from "@/components/cursor-follower";
 
 export default function Home() {
   return (
@@ -34,7 +32,7 @@ export default function Home() {
         <section id="hero" className="relative w-full text-foreground pt-32 pb-20 md:pt-48 md:pb-32">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-block rounded-full p-px mb-6 glass-border">
+              <div className="inline-block rounded-full p-px mb-6 gradient-border-glow">
                 <div className="bg-background rounded-full px-4 py-1.5">
                   <span className="font-medium text-sm">Now supercharged with ArchoZen</span>
                 </div>
@@ -42,16 +40,13 @@ export default function Home() {
               <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tight">
                 AI that builds with you
               </h1>
-              <p className="mt-4 max-w-2xl mx-auto font-body text-lg md:text-xl text-muted-foreground">
-                Experience the ancient art of archery, reimagined for the modern age with our AI-powered coaching.
-              </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-full bg-white text-black shadow-[0_0_20px_0px_hsl(var(--primary)/0.5)] hover:bg-gray-200">
+                <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-full bg-white text-black hover:bg-gray-200">
                   <a href="#programs">
                     Get started for free
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-full">
+                <Button asChild size="lg" variant="secondary" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-full">
                   <a href="#contact">
                     See plans & pricing
                   </a>
@@ -60,7 +55,7 @@ export default function Home() {
             </div>
             <div className="relative mt-24">
               <div className="absolute top-0 -inset-x-4 h-48 bg-gradient-to-t from-background to-transparent z-10"></div>
-              <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden glass-border">
+              <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden gradient-border-glow p-0">
                   <Image
                     src="https://placehold.co/1200x800.png"
                     alt="AI Copilot Interface"
@@ -94,6 +89,7 @@ export default function Home() {
         </div>
       </main>
       <AppFooter />
+      <CursorFollower />
     </div>
   );
 }
