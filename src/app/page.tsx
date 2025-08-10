@@ -60,7 +60,7 @@ export default function Home() {
             </div>
             <div className="relative mt-24">
               <div className="absolute top-0 -inset-x-4 h-48 bg-gradient-to-t from-background to-transparent z-10"></div>
-              <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden p-px glass-border">
+              <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden glass-border">
                   <Image
                     src="https://placehold.co/1200x800.png"
                     alt="AI Copilot Interface"
@@ -77,19 +77,19 @@ export default function Home() {
         <div>
             <LogoCarousel />
         </div>
-        <div className="bg-secondary/50 dark:bg-card">
+        <div className="bg-transparent">
             <ProgramShowcase />
         </div>
-        <div className="bg-secondary/50 dark:bg-card">
+        <div className="bg-transparent">
             <CoachSpotlight />
         </div>
-        <div className="bg-secondary/50 dark:bg-card">
+        <div className="bg-transparent">
             <GalleryExperience />
         </div>
-        <div className="bg-secondary/50 dark:bg-card">
+        <div className="bg-transparent">
             <ArcheryTips />
         </div>
-        <div className="bg-secondary/50 dark:bg-card">
+        <div className="bg-transparent">
             <ContactSection />
         </div>
       </main>
