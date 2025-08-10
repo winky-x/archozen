@@ -4,11 +4,14 @@ import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
 const CursorFollower = () => {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isMounted, setIsMounted] = useState(false);
+  const [offsetX, setOffsetX] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
 
   useEffect(() => {
     setIsMounted(true);
+    
     const updatePosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
@@ -18,16 +21,24 @@ const CursorFollower = () => {
     return () => window.removeEventListener('mousemove', updatePosition);
   }, []);
 
+  useEffect(() => {
+    if (isMounted) {
+      setOffsetX((position.x - (window.innerWidth / 2)) / 50);
+      setOffsetY((position.y - (window.innerHeight / 2)) / 50);
+    }
+  }, [position, isMounted]);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div
       className={cn(
-        "hidden md:block fixed z-50 pointer-events-none transition-transform duration-300 ease-out",
-        !isMounted && "opacity-0"
+        "hidden md:block fixed z-50 pointer-events-none transition-transform duration-300 ease-out right-4 bottom-4"
       )}
       style={{
-        transform: `translate(${position.x}px, ${position.y}px) translate(-50%, -50%)`,
-        left: 0,
-        top: 0,
+        transform: `translate(${offsetX}px, ${offsetY}px)`,
       }}
     >
       <svg
