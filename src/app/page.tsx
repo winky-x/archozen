@@ -1,3 +1,6 @@
+
+"use client";
+
 import AppHeader from "@/components/app-header";
 import AppFooter from "@/components/app-footer";
 import ProgramShowcase from "@/components/program-showcase";
@@ -41,12 +44,12 @@ export default function Home() {
                 AI that builds with you
               </h1>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-full bg-white text-black hover:bg-gray-200">
+                <Button asChild size="lg" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-lg bg-white text-black hover:bg-gray-200">
                   <a href="#programs">
                     Get started for free
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="secondary" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-full">
+                <Button asChild size="lg" variant="secondary" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-lg">
                   <a href="#contact">
                     See plans & pricing
                   </a>
