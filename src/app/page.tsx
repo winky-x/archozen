@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import CursorFollower from "@/components/cursor-follower";
 import MotionWrapper from "@/components/motion-wrapper";
-import { useState, useEffect, useRef } from 'react';
+import TiltImage from "@/components/tilt-image";
 
 export default function Home() {
   return (
@@ -54,6 +54,8 @@ export default function Home() {
             </div>
           </div>
           <div className="container mx-auto px-4">
+
+
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-block rounded-full p-px mb-4 gradient-border-glow-thin">
                 <div className="bg-background rounded-full px-4 py-1.5">
@@ -78,78 +80,22 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            </div>
-            <div className="relative mt-24">
-                <div className="w-[calc(100%-1rem)] ml-auto md:mx-auto md:w-full md:max-w-4xl">
-                  <div className="gradient-border-glow rounded-l-xl md:rounded-xl">
-                    <Image
-                        src="/hero-image.png"
-                        alt="AI Copilot Interface"
-                        width={1200}
-                        height={800}
-                        className="object-cover w-full h-full rounded-l-xl md:rounded-xl"
-                        data-ai-hint="ai chat interface"
-                    />
-                  </div>
-                </div>
-            </div>
+          </div>
+          <TiltImage />
         </section>
-       <div className="relative mt-24">
- {
-        () => {
-          const [tilt, setTilt] = useState({ x: 0, y: 0 });
-          const imageRef = useRef<HTMLDivElement>(null);
 
-          useEffect(() => {
-            const handleMouseMove = (event: MouseEvent) => {
-              if (imageRef.current) {
-                const { clientX, clientY } = event;
-                const { left, top, width, height } = imageRef.current.getBoundingClientRect();
-                const centerX = left + width / 2;
-                const centerY = top + height / 2;
-                const moveX = (clientX - centerX) / centerX;
-                const moveY = (clientY - centerY) / centerY;
-                setTilt({ x: moveY * 10, y: moveX * 10 }); // Adjust multiplier for desired tilt
-              }
-            };
-
-            window.addEventListener('mousemove', handleMouseMove);
-
-            return () => {
-              window.removeEventListener('mousemove', handleMouseMove);
-            };
-          }, []);
-
-          return (
-            <div ref={imageRef} className="w-[calc(100%-1rem)] ml-auto md:mx-auto md:w-full md:max-w-4xl" style={{ transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`, transformStyle: 'preserve-3d', transition: 'transform 0.5s ease-out' }}>
-              <div className="gradient-border-glow rounded-l-xl md:rounded-xl">
-                <Image
-                  src="/hero-image.png"
-                  alt="AI Copilot Interface"
-                  width={1200}
-                  height={800}
-                  className="object-cover w-full h-full rounded-l-xl md:rounded-xl"
-                  data-ai-hint="ai chat interface"
-                />
-              </div>
-            </div>
-          );
-        }
-      }
-      </div>
-
- <MotionWrapper>
- <LogoCarousel />
- </MotionWrapper>
- <MotionWrapper>
- <ProgramShowcase />
- </MotionWrapper>
- <MotionWrapper>
- <CoachSpotlight />
- </MotionWrapper>
- <MotionWrapper>
- <GalleryExperience />
- </MotionWrapper>
+        <MotionWrapper>
+          <LogoCarousel />
+        </MotionWrapper>
+        <MotionWrapper>
+          <ProgramShowcase />
+        </MotionWrapper>
+        <MotionWrapper>
+          <CoachSpotlight />
+        </MotionWrapper>
+        <MotionWrapper>
+          <GalleryExperience />
+        </MotionWrapper>
         <MotionWrapper>
             <ArcheryTips />
         </MotionWrapper>
