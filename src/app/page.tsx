@@ -13,6 +13,7 @@ import LogoCarousel from "@/components/logo-carousel";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
 import CursorFollower from "@/components/cursor-follower";
+import MotionWrapper from "@/components/motion-wrapper";
 
 export default function Home({}) {
   const [isMounted, setIsMounted] = useState(false);
@@ -85,7 +86,7 @@ export default function Home({}) {
             </div>
             <div className="relative mt-24">
               {isMounted && (
-                <div className="w-[calc(100%-1rem)] ml-auto md:mx-auto md:w-full md:max-w-4xl gradient-border-glow rounded-l-xl md:rounded-xl overflow-hidden md:overflow-visible">
+                <div className="w-[calc(100%-1rem)] ml-auto md:mx-auto md:w-full md:max-w-4xl gradient-border-glow rounded-l-xl md:rounded-xl">
                   <Image
                       src="https://placehold.co/1200x800.png"
                       alt="AI Copilot Interface"
@@ -99,24 +100,24 @@ export default function Home({}) {
             </div>
         </section>
 
-        <div>
+        <MotionWrapper>
             <LogoCarousel />
-        </div>
-        <div className="bg-transparent">
+        </MotionWrapper>
+        <MotionWrapper>
             <ProgramShowcase />
-        </div>
-        <div className="bg-transparent">
+        </MotionWrapper>
+        <MotionWrapper>
             <CoachSpotlight />
-        </div>
-        <div className="bg-transparent">
+        </MotionWrapper>
+        <MotionWrapper>
             <GalleryExperience />
-        </div>
-        <div className="bg-transparent">
+        </MotionWrapper>
+        <MotionWrapper>
             <ArcheryTips />
-        </div>
-        <div className="bg-transparent">
+        </MotionWrapper>
+        <MotionWrapper>
             <ContactSection />
-        </div>
+        </MotionWrapper>
       </main>
       <AppFooter />
       <CursorFollower />
