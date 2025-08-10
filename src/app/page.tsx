@@ -66,17 +66,15 @@ export default function Home({}) {
             </div>
             <div className="relative mt-24">
               {isMounted && (
-                <div className="w-full md:max-w-4xl ml-auto">
-                    <div className="gradient-border-glow rounded-l-xl overflow-hidden">
-                        <Image
-                            src="https://placehold.co/1200x800.png"
-                            alt="AI Copilot Interface"
-                            width={1200}
-                            height={800}
-                            className="object-cover w-full h-full rounded-l-xl"
-                            data-ai-hint="ai chat interface"
-                        />
-                    </div>
+                <div className="w-full ml-auto md:mx-auto md:max-w-4xl gradient-border-glow rounded-l-xl md:rounded-xl overflow-hidden md:overflow-visible">
+                  <Image
+                      src="https://placehold.co/1200x800.png"
+                      alt="AI Copilot Interface"
+                      width={1200}
+                      height={800}
+                      className="object-cover w-full h-full rounded-l-xl md:rounded-xl"
+                      data-ai-hint="ai chat interface"
+                  />
                 </div>
               )}
             </div>
