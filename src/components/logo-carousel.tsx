@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const logos = [
     { src: "/logos/logo-1.svg", alt: "Sponsor One" },
-    { src: "/logos/logo-2.svg", alt: "Sponsor Two" },
-    { src: "/logos/logo-3.svg", alt: "Sponsor Three" },
-    { src: "/logos/logo-4.svg", alt: "Sponsor Four" },
-    { src: "/logos/logo-5.svg", alt: "Sponsor Five" },
-    { src: "/logos/logo-6.svg", alt: "Sponsor Six" },
-    { src: "/logos/logo-7.svg", alt: "Sponsor Seven" },
-    { src: "/logos/logo-8.svg", alt: "Sponsor Eight" },
+    { src: "/logos/olympic-rings.svg", alt: "Olympic Rings" }, // Example path, replace with your SVG
+    { src: "/logos/world-archery.svg", alt: "World Archery" }, // Example path, replace with your SVG
+    { src: "/logos/archery-canada.svg", alt: "Archery Canada" }, // Example path, replace with your SVG
+    { src: "/logos/usa-archery.svg", alt: "USA Archery" }, // Example path, replace with your SVG
+    { src: "/logos/british-archery.svg", alt: "British Archery" }, // Example path, replace with your SVG
+    { src: "/logos/korean-archery.svg", alt: "Korean Archery Federation" }, // Example path, replace with your SVG
+    { src: "/logos/european-archery.svg", alt: "European Archery Federation" }, // Example path, replace with your SVG
 ];
 
 const duplicatedLogos = [...logos, ...logos];
@@ -18,7 +18,7 @@ export default function LogoCarousel() {
     <div className="py-12 bg-background">
       <div className="container mx-auto px-4">
         <h3 className="text-center font-body text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-8">
-            Trusted by world-class partners
+            Travelled across
         </h3>
         <div
             className="relative w-full overflow-hidden"

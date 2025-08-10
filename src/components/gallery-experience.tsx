@@ -1,8 +1,8 @@
 
 "use client";
 
-import React, { useState } from 'react';
 import Image from "next/image";
+import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Card } from './ui/card';
 
@@ -13,6 +13,7 @@ const galleryImages = [
   { src: '/gallery/gallery-4.png', alt: 'Student receiving instruction', dataAiHint: 'archery lesson', width: 600, height: 400 },
   { src: '/gallery/gallery-5.png', alt: 'A row of bows on a rack', dataAiHint: 'archery bows', width: 600, height: 800 },
   { src: '/gallery/gallery-6.png', alt: 'Scenic outdoor archery range', dataAiHint: 'outdoor range', width: 600, height: 400 },
+  { src: '/gallery/gallery-7.png', alt: 'Another scenic archery shot', dataAiHint: 'archery range', width: 600, height: 400 }, // Added 7th image
 ];
 
 export default function GalleryExperience() {
@@ -27,7 +28,10 @@ export default function GalleryExperience() {
             A glimpse into the life and art of archery at ArchoZen Academy.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {/* Adjusted grid to be more fluid and responsive to image sizes */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-min">
+          {/* Use auto-rows-min to make rows fit content size */}
+          
           {galleryImages.map((image, index) => (
             <div
               key={index}
@@ -50,14 +54,18 @@ export default function GalleryExperience() {
         </div>
       </div>
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl p-0 bg-transparent border-0">
-          {selectedImage && (
-             <Card>
+        {/* Adjusted DialogContent to fit within screen and show close button */}
+        <DialogContent className="w-auto max-w-[95vw] max-h-[95vh] p-0 bg-transparent border-0 flex items-center justify-center overflow-auto">
+          {selectedImage && galleryImages.find(img => img.src === selectedImage) && (
+            // Find the selected image object to get its dimensions
+            
+             <Card className="flex justify-center items-center">
                 <Image
                     src={selectedImage}
-                    alt="Selected gallery image"
-                    width={1920}
-                    height={1080}
+                    alt={galleryImages.find(img => img.src === selectedImage)?.alt || "Selected gallery image"}
+                    // Adjusted width and height for better preview scaling within bounds
+                    width={galleryImages.find(img => img.src === selectedImage)?.width} // Use original image width
+                    height={galleryImages.find(img => img.src === selectedImage)?.height} // Use original image height
                     className="w-full h-auto object-contain rounded-lg"
                 />
             </Card>

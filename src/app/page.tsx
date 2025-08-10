@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import AppHeader from "@/components/app-header";
 import AppFooter from "@/components/app-footer";
 import ProgramShowcase from "@/components/program-showcase";
