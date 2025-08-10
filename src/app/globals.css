@@ -104,6 +104,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+    right: auto;
     width: 200%;
     height: 200%;
     background: conic-gradient(
