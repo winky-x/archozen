@@ -1,16 +1,19 @@
 
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, ChevronRight } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { ChevronDown } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
 import { Separator } from "./ui/separator";
 
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription, DialogClose } from "@/components/ui/dialog";
 const navLinks = [
   { href: "/#programs", label: "Programs" },
   { href: "/#coaches", label: "Coaches" },
@@ -26,6 +29,8 @@ const rightLinks = navLinks.slice(3);
 export default function AppHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isAboutPopupOpen, setIsAboutPopupOpen] = useState(false);
+
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -62,7 +67,7 @@ export default function AppHeader() {
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-6 w-1/3">
+          <div className="flex items-center gap-6 md:w-1/3">
             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
@@ -112,17 +117,54 @@ export default function AppHeader() {
             </nav>
           </div>
           
-          <div className="flex flex-1 justify-center w-1/3">
-             <a href="/#" className="flex items-center gap-2">
-              {mounted ? (
-                  <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
-              ) : (
-                <div className="h-8 w-8" /> 
-              )}
-            </a>
+          <div className="flex flex-1 justify-center items-center md:w-1/3">
+            <div className="flex items-center gap-2">
+              <a href="/#" className="flex items-center">
+                {mounted ? (
+                    <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
+                ) : (
+                  <div className="h-8 w-8" />
+                )}
+              </a>
+              <Dialog open={isAboutPopupOpen} onOpenChange={setIsAboutPopupOpen}>
+                <DialogTrigger asChild className="md:hidden">
+                  <Button variant="ghost" size="sm" className="text-xs px-2 font-medium">
+                    by Yuvraj Chandra
+                  </Button>
+                </DialogTrigger>
+
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button variant="ghost" size="sm" className="hidden md:inline-flex items-center gap-1 text-xs px-2 font-medium">
+                      by Yuvraj Chandra
+                      <ChevronDown className="ml-1 h-3 w-3" />
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-40 p-1">
+                    <Button
+                      variant="ghost"
+                      className="w-full text-left justify-start text-sm font-normal"
+                      onClick={() => setIsAboutPopupOpen(true)}
+                    >
+                      About the Creator
+                    </Button>
+                  </PopoverContent>
+                </Popover>
+
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>About Yuvraj Chandra</DialogTitle>
+                  </DialogHeader>
+                  <DialogDescription>
+                    This project was a personal endeavor that I built over the course of just 4 days. I am Yuvraj Chandra, a 13-year-old student attending Police DAV Public School in Jalandhar. I have a strong passion for coding and enjoy bringing ideas to life through web development. This project is a reflection of my interest in creating engaging and functional websites.
+                    This project was built by Yuvraj Chandra, a 13-year-old student from Police DAV Public School in Jalandhar.
+                  </DialogDescription>
+                </DialogContent>
+              </Dialog>
+            </div>
           </div>
 
-          <div className="flex items-center justify-start gap-6 w-1/3">
+          <div className="flex items-center justify-end gap-6 md:w-1/3">
             <nav className="hidden md:flex items-center gap-6">
               {rightLinks.map((link) => (
                 <NavLink key={link.href} {...link} />
