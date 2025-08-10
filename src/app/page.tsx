@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from 'next/image';
 
-export default function Home() {
+export default function Home({}: { params: {}; searchParams: {} }) {
   return (
     <div className="flex flex-col min-h-screen bg-background overflow-x-hidden">
       <div className="fixed inset-0 z-[-1] overflow-hidden">
