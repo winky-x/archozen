@@ -6,23 +6,22 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { Menu, ChevronRight } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
 import { Separator } from "./ui/separator";
 
 const navLinks = [
-  { href: "#programs", label: "Programs" },
-  { href: "#coaches", label: "Coaches" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#tips", label: "Tips" },
-  { href: "#contact", label: "Contact" },
-  { href: "#dashboard", label: "Dashboard" },
+  { href: "/#programs", label: "Programs" },
+  { href: "/#coaches", label: "Coaches" },
+  { href: "/#gallery", label: "Gallery" },
+  { href: "/#tips", label: "Tips" },
+  { href: "/#contact", label: "Contact" },
+  { href: "/timings", label: "Timings" },
 ];
 
 const leftLinks = navLinks.slice(0, 3);
-const rightLinks = navLinks.slice(3, 5);
-const dashboardLink = navLinks[5];
+const rightLinks = navLinks.slice(3);
 
 export default function AppHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -101,7 +100,7 @@ export default function AppHeader() {
                       </ul>
                     </nav>
                     <div className="p-4 border-t">
-                      <Button className="w-full" variant="outline">Dashboard</Button>
+                      <Button asChild className="w-full" variant="outline"><a href="/timings">View Timings</a></Button>
                     </div>
                   </div>
               </SheetContent>
@@ -114,7 +113,7 @@ export default function AppHeader() {
           </div>
           
           <div className="flex flex-1 justify-center w-1/3">
-             <a href="#" className="flex items-center gap-2">
+             <a href="/#" className="flex items-center gap-2">
               {mounted ? (
                   <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
               ) : (
@@ -130,7 +129,6 @@ export default function AppHeader() {
               ))}
             </nav>
             <div className="flex items-center justify-end flex-1 gap-2">
-                <NavLink href={dashboardLink.href} label={dashboardLink.label} className="hidden md:inline-flex" />
                 <ThemeToggle />
             </div>
           </div>
