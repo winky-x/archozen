@@ -28,16 +28,6 @@ export default function Home({}) {
         {/* Dark Theme Background */}
         <div className="dark:block hidden">
             <div className="absolute inset-0 bg-black"></div>
-            <div className="absolute top-1/2 left-1/2 h-[150vh] w-[150vh] -translate-x-1/2 -translate-y-1/2">
-                <div className="absolute inset-0 animate-[spin_20s_linear_infinite]" style={{
-                    background: `radial-gradient(circle at center, rgba(123, 31, 162, 0.4) 0%, transparent 40%),
-                                 radial-gradient(circle at center, rgba(8, 145, 178, 0.4) 0%, transparent 50%)`
-                }}></div>
-            </div>
-            <div className="absolute top-0 left-0 w-full h-full" style={{
-                background: `radial-gradient(ellipse 80% 50% at 50% -20%, rgba(123, 31, 162, 0.3), transparent),
-                             radial-gradient(ellipse 80% 50% at 50% 120%, rgba(8, 145, 178, 0.3), transparent)`
-            }}></div>
         </div>
         
         {/* Light Theme Background */}
@@ -56,6 +46,17 @@ export default function Home({}) {
       <AppHeader />
       <main className="flex-1">
         <section id="hero" className="relative w-full text-foreground pt-32 pb-20 md:pt-48 md:pb-32">
+          <div className="absolute top-0 left-0 w-full h-full z-[-1] dark:block hidden">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div 
+                    className="w-[80vw] h-[80vh] bg-gradient-to-tr from-purple-500/50 to-cyan-500/50"
+                    style={{
+                        maskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, black 50%, transparent 100%)',
+                        WebkitMaskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, black 50%, transparent 100%)'
+                    }}
+                />
+            </div>
+          </div>
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-block rounded-full p-px mb-6 gradient-border-glow-thin">
