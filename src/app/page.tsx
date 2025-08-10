@@ -63,21 +63,23 @@ export default function Home({}) {
                 </Button>
               </div>
             </div>
+            </div>
             <div className="relative mt-24">
               {isMounted && (
-                <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden gradient-border-glow">
-                    <Image
-                      src="https://placehold.co/1200x800.png"
-                      alt="AI Copilot Interface"
-                      width={1200}
-                      height={800}
-                      className="object-cover w-full h-full rounded-xl"
-                      data-ai-hint="ai chat interface"
-                    />
+                <div className="w-full md:max-w-4xl md:mx-auto">
+                    <div className="gradient-border-glow rounded-xl">
+                        <Image
+                            src="https://placehold.co/1200x800.png"
+                            alt="AI Copilot Interface"
+                            width={1200}
+                            height={800}
+                            className="object-cover w-full h-full rounded-xl"
+                            data-ai-hint="ai chat interface"
+                        />
+                    </div>
                 </div>
               )}
             </div>
-          </div>
         </section>
 
         <div>
