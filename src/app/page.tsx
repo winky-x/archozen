@@ -1,6 +1,7 @@
 
 "use client";
 
+import React, { useState, useEffect } from "react";
 import AppHeader from "@/components/app-header";
 import AppFooter from "@/components/app-footer";
 import ProgramShowcase from "@/components/program-showcase";
@@ -14,6 +15,12 @@ import Image from 'next/image';
 import CursorFollower from "@/components/cursor-follower";
 
 export default function Home({}) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen bg-background overflow-x-hidden">
       <div className="fixed inset-0 z-[-1] overflow-hidden">
@@ -56,19 +63,21 @@ export default function Home({}) {
                 </Button>
               </div>
             </div>
-            <div className="relative mt-24">
-              <div className="absolute top-0 -inset-x-4 h-48 bg-gradient-to-t from-background to-transparent z-10"></div>
-              <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden gradient-border-glow p-0">
-                  <Image
-                    src="https://placehold.co/1200x800.png"
-                    alt="AI Copilot Interface"
-                    width={1200}
-                    height={800}
-                    className="object-cover w-full h-full rounded-xl"
-                    data-ai-hint="ai chat interface"
-                  />
+            {isMounted && (
+              <div className="relative mt-24">
+                <div className="absolute top-0 -inset-x-4 h-48 bg-gradient-to-t from-background to-transparent z-10"></div>
+                <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden gradient-border-glow p-0">
+                    <Image
+                      src="https://placehold.co/1200x800.png"
+                      alt="AI Copilot Interface"
+                      width={1200}
+                      height={800}
+                      className="object-cover w-full h-full rounded-xl"
+                      data-ai-hint="ai chat interface"
+                    />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </section>
 
