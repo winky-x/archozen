@@ -108,32 +108,13 @@ body {
 
 .gradient-border-glow {
     position: relative;
-    padding: 4px;
     background-color: transparent;
-}
-
-.gradient-border-glow::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    right: auto;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(
-        from 180deg at 50% 50%,
-        #33ff99, #7226FF, #F042FF, #87F5F5, #33ff99
-    );
-    transform-origin: center center;
-    transform: translate(-50%, -50%);
-    animation: spin 5s linear infinite;
-    filter: blur(20px);
 }
 
 .gradient-border-glow > * {
     position: relative;
     z-index: 1;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px 5px hsla(220, 100%, 70%, 0.5);
 }
 
 
@@ -170,9 +151,9 @@ body {
 
 @keyframes spin {
     from {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg);
     }
 }

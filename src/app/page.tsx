@@ -27,23 +27,23 @@ export default function Home({}) {
         
         {/* Dark Theme Background */}
         <div className="dark:block hidden">
-          <div className="absolute inset-0 bg-blue-950"></div>
-          <div className="absolute top-[-50%] left-[-50%] h-[200%] w-[200%] animate-[spin_20s_linear_infinite]">
-              <div className="absolute inset-0" style={{
-                  background: `radial-gradient(circle at center, rgba(123, 31, 162, 0.4) 0%, transparent 40%),
-                               radial-gradient(circle at center, rgba(8, 145, 178, 0.4) 0%, transparent 50%)`
-              }}></div>
-          </div>
-          <div className="absolute top-0 left-0 w-full h-full" style={{
-              background: `radial-gradient(ellipse 80% 50% at 50% -20%, rgba(123, 31, 162, 0.3), transparent),
-                           radial-gradient(ellipse 80% 50% at 50% 120%, rgba(8, 145, 178, 0.3), transparent)`
-          }}></div>
+            <div className="absolute inset-0 bg-black"></div>
+            <div className="absolute top-1/2 left-1/2 h-[150vh] w-[150vh] -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute inset-0 animate-[spin_20s_linear_infinite]" style={{
+                    background: `radial-gradient(circle at center, rgba(123, 31, 162, 0.4) 0%, transparent 40%),
+                                 radial-gradient(circle at center, rgba(8, 145, 178, 0.4) 0%, transparent 50%)`
+                }}></div>
+            </div>
+            <div className="absolute top-0 left-0 w-full h-full" style={{
+                background: `radial-gradient(ellipse 80% 50% at 50% -20%, rgba(123, 31, 162, 0.3), transparent),
+                             radial-gradient(ellipse 80% 50% at 50% 120%, rgba(8, 145, 178, 0.3), transparent)`
+            }}></div>
         </div>
         
         {/* Light Theme Background */}
-        <div className="hidden dark:hidden background-grid">
+        <div className="hidden dark:hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-[#f0f2f5] to-[#d8e0f0]"></div>
-          
+          <div className="absolute inset-0 background-grid"></div>
           {/* Decorative Blobs */}
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200 rounded-full filter blur-3xl opacity-30 animate-pulse animation-delay-2000"></div>
@@ -60,7 +60,7 @@ export default function Home({}) {
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-block rounded-full p-px mb-6 gradient-border-glow-thin">
                 <div className="bg-background rounded-full px-4 py-1.5">
-                  <span className="font-medium text-sm">Now supercharged with ArchoZen</span>
+                  <span className="font-medium text-sm">Now supercharged with agent mode</span>
                 </div>
               </div>
               <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tight">

@@ -23,6 +23,7 @@ const CursorFollower = () => {
 
   useEffect(() => {
     if (isMounted) {
+      // Parallax effect
       setOffsetX((position.x - (window.innerWidth / 2)) / 50);
       setOffsetY((position.y - (window.innerHeight / 2)) / 50);
     }
