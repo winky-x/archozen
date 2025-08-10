@@ -120,7 +120,6 @@ body {
         #87F5F5, #7226FF, #F042FF, #87F5F5
     );
     transform-origin: center center;
-    transform: translate(-50%, -50%);
     animation: spin 5s linear infinite;
     filter: blur(20px);
 }
@@ -150,7 +149,6 @@ body {
         #87F5F5, #7226FF, #F042FF, #87F5F5
     );
     transform-origin: center center;
-    transform: translate(-50%, -50%);
     animation: spin 5s linear infinite;
     filter: blur(8px);
 }
