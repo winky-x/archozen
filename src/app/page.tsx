@@ -15,7 +15,7 @@ import Image from 'next/image';
 import CursorFollower from "@/components/cursor-follower";
 import MotionWrapper from "@/components/motion-wrapper";
 
-export default function Home({}) {
+export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background overflow-x-hidden">
       <div className="fixed inset-0 z-[-1] overflow-hidden">
