@@ -82,7 +82,7 @@ export default function Home() {
                 <div className="w-[calc(100%-1rem)] ml-auto md:mx-auto md:w-full md:max-w-4xl">
                   <div className="gradient-border-glow rounded-l-xl md:rounded-xl">
                     <Image
-                        src="https://placehold.co/1200x800.png"
+                        src="/hero-image.png"
                         alt="AI Copilot Interface"
                         width={1200}
                         height={800}

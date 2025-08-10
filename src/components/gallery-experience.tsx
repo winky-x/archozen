@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -6,12 +7,12 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Card } from './ui/card';
 
 const galleryImages = [
-  { src: 'https://placehold.co/600x400.png', alt: 'Archer at full draw', dataAiHint: 'archer full draw', width: 600, height: 400 },
-  { src: 'https://placehold.co/600x800.png', alt: 'Close-up of an arrow nock', dataAiHint: 'arrow nock', width: 600, height: 800 },
-  { src: 'https://placehold.co/600x400.png', alt: 'Archery target with arrows', dataAiHint: 'archery target', width: 600, height: 400 },
-  { src: 'https://placehold.co/600x400.png', alt: 'Student receiving instruction', dataAiHint: 'archery lesson', width: 600, height: 400 },
-  { src: 'https://placehold.co/600x800.png', alt: 'A row of bows on a rack', dataAiHint: 'archery bows', width: 600, height: 800 },
-  { src: 'https://placehold.co/600x400.png', alt: 'Scenic outdoor archery range', dataAiHint: 'outdoor range', width: 600, height: 400 },
+  { src: '/gallery/gallery-1.png', alt: 'Archer at full draw', dataAiHint: 'archer full draw', width: 600, height: 400 },
+  { src: '/gallery/gallery-2.png', alt: 'Close-up of an arrow nock', dataAiHint: 'arrow nock', width: 600, height: 800 },
+  { src: '/gallery/gallery-3.png', alt: 'Archery target with arrows', dataAiHint: 'archery target', width: 600, height: 400 },
+  { src: '/gallery/gallery-4.png', alt: 'Student receiving instruction', dataAiHint: 'archery lesson', width: 600, height: 400 },
+  { src: '/gallery/gallery-5.png', alt: 'A row of bows on a rack', dataAiHint: 'archery bows', width: 600, height: 800 },
+  { src: '/gallery/gallery-6.png', alt: 'Scenic outdoor archery range', dataAiHint: 'outdoor range', width: 600, height: 400 },
 ];
 
 export default function GalleryExperience() {
