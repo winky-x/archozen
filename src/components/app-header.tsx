@@ -67,7 +67,7 @@ export default function AppHeader() {
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-6 md:w-1/3">
+          <div className="flex items-center gap-6 w-1/3">
             <Sheet open={isMobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
@@ -117,8 +117,8 @@ export default function AppHeader() {
             </nav>
           </div>
           
-          <div className="flex flex-1 justify-center items-center md:w-1/3">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-1 justify-center items-center">
+            <div className="flex items-center gap-1">
               <a href="/#" className="flex items-center">
                 {mounted ? (
                     <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
@@ -127,7 +127,7 @@ export default function AppHeader() {
                 )}
               </a>
               <Dialog open={isAboutPopupOpen} onOpenChange={setIsAboutPopupOpen}>
-                <DialogTrigger asChild className="md:hidden">
+                <DialogTrigger asChild className="md:hidden leading-none">
                   <Button variant="ghost" size="sm" className="text-xs px-2 font-medium">
                     by Yuvraj Chandra
                   </Button>
@@ -136,8 +136,8 @@ export default function AppHeader() {
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button variant="ghost" size="sm" className="hidden md:inline-flex items-center gap-1 text-xs px-2 font-medium">
-                      by Yuvraj Chandra
-                      <ChevronDown className="ml-1 h-3 w-3" />
+                     by Yuvraj Chandra
+                     {/* <ChevronDown className="ml-1 h-3 w-3" /> // Removed dropdown icon for smaller footprint */}
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className="w-40 p-1">
@@ -164,7 +164,7 @@ export default function AppHeader() {
             </div>
           </div>
 
-          <div className="flex items-center justify-end gap-6 md:w-1/3">
+          <div className="flex items-center justify-end gap-6 w-1/3">
             <nav className="hidden md:flex items-center gap-6">
               {rightLinks.map((link) => (
                 <NavLink key={link.href} {...link} />
