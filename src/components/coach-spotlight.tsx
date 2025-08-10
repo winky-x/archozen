@@ -48,8 +48,8 @@ export default function CoachSpotlight() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {coaches.map((coach) => (
             <div key={coach.name} className="group overflow-hidden rounded-xl">
-              <Card className="h-full flex flex-col text-center items-center p-6 transition-all duration-300 ease-smooth">
-                <CardHeader className="p-0 items-center">
+              <Card className="h-full flex flex-col transition-all duration-300 ease-smooth hover:shadow-2xl hover:-translate-y-2 active:shadow-2xl active:-translate-y-2">
+                <CardHeader className="items-center text-center p-6">
                   <div className="relative h-32 w-32 rounded-full overflow-hidden border-4 border-primary/20">
                     <Image
                       src={coach.image}
@@ -62,10 +62,10 @@ export default function CoachSpotlight() {
                   <CardTitle className="font-headline text-2xl pt-4">{coach.name}</CardTitle>
                   <CardDescription className="text-muted-foreground font-semibold">{coach.title}</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow p-0 pt-4">
+                <CardContent className="flex-grow p-6 pt-0 text-center">
                   <p className="text-foreground/70">{coach.bio}</p>
                 </CardContent>
-                <CardFooter className="p-0 pt-4">
+                <CardFooter className="justify-center p-6 pt-0">
                   <div className="flex gap-2">
                     <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-primary active:text-primary">
                       <a href={coach.socials.twitter} aria-label={`${coach.name}'s Twitter`}>
