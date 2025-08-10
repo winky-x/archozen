@@ -79,15 +79,17 @@ export default function Home({}) {
             </div>
             </div>
             <div className="relative mt-24">
-                <div className="w-[calc(100%-1rem)] ml-auto md:mx-auto md:w-full md:max-w-4xl gradient-border-glow rounded-l-xl md:rounded-xl">
-                  <Image
-                      src="https://placehold.co/1200x800.png"
-                      alt="AI Copilot Interface"
-                      width={1200}
-                      height={800}
-                      className="object-cover w-full h-full rounded-l-xl md:rounded-xl"
-                      data-ai-hint="ai chat interface"
-                  />
+                <div className="w-[calc(100%-1rem)] ml-auto md:mx-auto md:w-full md:max-w-4xl">
+                  <div className="gradient-border-glow rounded-l-xl md:rounded-xl">
+                    <Image
+                        src="https://placehold.co/1200x800.png"
+                        alt="AI Copilot Interface"
+                        width={1200}
+                        height={800}
+                        className="object-cover w-full h-full rounded-l-xl md:rounded-xl"
+                        data-ai-hint="ai chat interface"
+                    />
+                  </div>
                 </div>
             </div>
         </section>
