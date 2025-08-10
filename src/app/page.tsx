@@ -72,11 +72,13 @@ export default function Home({}) {
                     Get started for free
                   </a>
                 </Button>
-                <Button asChild size="lg" variant="secondary" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-lg">
-                  <a href="#contact">
-                    See plans & pricing
-                  </a>
-                </Button>
+                <div className="liquid-glass rounded-lg w-full sm:w-auto">
+                    <Button asChild size="lg" variant="ghost" className="font-bold text-base transition-transform duration-300 hover:scale-105 w-full sm:w-auto rounded-lg bg-transparent hover:bg-white/10">
+                    <a href="#contact">
+                        See plans & pricing
+                    </a>
+                    </Button>
+                </div>
               </div>
             </div>
             </div>
@@ -119,4 +121,3 @@ export default function Home({}) {
       <CursorFollower />
     </div>
   );
-}
