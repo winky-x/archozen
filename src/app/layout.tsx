@@ -1,4 +1,4 @@
-import type {Metadata} from 'next';
+`import type {Metadata} from 'next';
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider";
 import { Inter } from 'next/font/google'
@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="en" className={`scroll-smooth ${inter.className}`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="icon" href="/logos/logo-light.svg" sizes="any" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
