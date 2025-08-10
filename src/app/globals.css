@@ -94,7 +94,6 @@ body {
 
 .gradient-border-glow {
     position: relative;
-    border-radius: 1.25rem; /* Corresponds to rounded-xl */
     padding: 4px;
     background-color: transparent;
     overflow: hidden;
