@@ -48,7 +48,7 @@ export default function CoachSpotlight() {
           {coaches.map((coach) => (
             <div key={coach.name} className="group overflow-hidden rounded-xl">
               <Card className="h-full flex flex-col text-center items-center p-6 transition-all duration-300 ease-smooth">
-                <CardHeader className="p-0">
+                <CardHeader className="p-0 items-center">
                   <div className="relative h-32 w-32 rounded-full overflow-hidden border-4 border-primary/20">
                     <Image
                       src={coach.image}
