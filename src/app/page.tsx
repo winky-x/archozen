@@ -16,12 +16,20 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background overflow-x-hidden">
-      <div 
-        className="pointer-events-none fixed inset-0 z-0 transition duration-300"
-        style={{
-          background: `radial-gradient(circle at 50% 0%, hsl(var(--primary) / 0.1), transparent 50%)`
-        }}
-      ></div>
+      <div className="fixed inset-0 z-[-1] overflow-hidden">
+        <div className="absolute inset-0 bg-blue-950"></div>
+        <div className="absolute top-[-50%] left-[-50%] h-[200%] w-[200%] animate-[spin_20s_linear_infinite]">
+            <div className="absolute inset-0" style={{
+                background: `radial-gradient(circle at center, rgba(123, 31, 162, 0.4) 0%, transparent 40%),
+                             radial-gradient(circle at center, rgba(8, 145, 178, 0.4) 0%, transparent 50%)`
+            }}></div>
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full" style={{
+            background: `radial-gradient(ellipse 80% 50% at 50% -20%, rgba(123, 31, 162, 0.3), transparent),
+                         radial-gradient(ellipse 80% 50% at 50% 120%, rgba(8, 145, 178, 0.3), transparent)`
+        }}></div>
+      </div>
+
       <AppHeader />
       <main className="flex-1">
         <section id="hero" className="relative w-full text-foreground pt-32 pb-20 md:pt-48 md:pb-32">
@@ -53,7 +61,7 @@ export default function Home() {
             </div>
             <div className="relative mt-24">
               <div className="absolute top-0 -inset-x-4 h-48 bg-gradient-to-t from-background to-transparent z-10"></div>
-              <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden glass-border">
+              <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden p-px glass-border">
                   <Image
                     src="https://placehold.co/1200x800.png"
                     alt="AI Copilot Interface"
@@ -67,22 +75,22 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="bg-background">
+        <div>
             <LogoCarousel />
         </div>
-        <div className="bg-secondary/50 dark:bg-card">
+        <div>
             <ProgramShowcase />
         </div>
-        <div className="bg-background">
+        <div>
             <CoachSpotlight />
         </div>
-        <div className="bg-secondary/50 dark:bg-card">
+        <div>
             <GalleryExperience />
         </div>
-        <div className="bg-background">
+        <div>
             <ArcheryTips />
         </div>
-        <div className="bg-secondary/50 dark:bg-card">
+        <div>
             <ContactSection />
         </div>
       </main>
