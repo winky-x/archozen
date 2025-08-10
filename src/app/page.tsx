@@ -24,17 +24,33 @@ export default function Home({}) {
   return (
     <div className="flex flex-col min-h-screen bg-background overflow-x-hidden">
       <div className="fixed inset-0 z-[-1] overflow-hidden">
-        <div className="absolute inset-0 bg-blue-950"></div>
-        <div className="absolute top-[-50%] left-[-50%] h-[200%] w-[200%] animate-[spin_20s_linear_infinite]">
-            <div className="absolute inset-0" style={{
-                background: `radial-gradient(circle at center, rgba(123, 31, 162, 0.4) 0%, transparent 40%),
-                             radial-gradient(circle at center, rgba(8, 145, 178, 0.4) 0%, transparent 50%)`
-            }}></div>
+        
+        {/* Dark Theme Background */}
+        <div className="dark:block hidden">
+          <div className="absolute inset-0 bg-blue-950"></div>
+          <div className="absolute top-[-50%] left-[-50%] h-[200%] w-[200%] animate-[spin_20s_linear_infinite]">
+              <div className="absolute inset-0" style={{
+                  background: `radial-gradient(circle at center, rgba(123, 31, 162, 0.4) 0%, transparent 40%),
+                               radial-gradient(circle at center, rgba(8, 145, 178, 0.4) 0%, transparent 50%)`
+              }}></div>
+          </div>
+          <div className="absolute top-0 left-0 w-full h-full" style={{
+              background: `radial-gradient(ellipse 80% 50% at 50% -20%, rgba(123, 31, 162, 0.3), transparent),
+                           radial-gradient(ellipse 80% 50% at 50% 120%, rgba(8, 145, 178, 0.3), transparent)`
+          }}></div>
         </div>
-        <div className="absolute top-0 left-0 w-full h-full" style={{
-            background: `radial-gradient(ellipse 80% 50% at 50% -20%, rgba(123, 31, 162, 0.3), transparent),
-                         radial-gradient(ellipse 80% 50% at 50% 120%, rgba(8, 145, 178, 0.3), transparent)`
-        }}></div>
+        
+        {/* Light Theme Background */}
+        <div className="hidden dark:hidden background-grid">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f0f2f5] to-[#d8e0f0]"></div>
+          
+          {/* Decorative Blobs */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-200 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200 rounded-full filter blur-3xl opacity-30 animate-pulse animation-delay-2000"></div>
+           <div className="absolute bottom-1/2 right-1/2 w-96 h-96 bg-pink-200 rounded-full filter blur-3xl opacity-20 animate-pulse animation-delay-4000"></div>
+
+        </div>
+
       </div>
 
       <AppHeader />
@@ -66,7 +82,7 @@ export default function Home({}) {
             </div>
             <div className="relative mt-24">
               {isMounted && (
-                <div className="w-full ml-auto md:mx-auto md:max-w-4xl gradient-border-glow rounded-l-xl md:rounded-xl overflow-hidden md:overflow-visible">
+                <div className="w-[90%] ml-auto md:mx-auto md:w-full md:max-w-4xl gradient-border-glow rounded-l-xl md:rounded-xl overflow-hidden md:overflow-visible">
                   <Image
                       src="https://placehold.co/1200x800.png"
                       alt="AI Copilot Interface"
