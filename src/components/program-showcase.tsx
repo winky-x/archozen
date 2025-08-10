@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
@@ -38,7 +39,7 @@ export default function ProgramShowcase() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program) => (
-            <Card key={program.title} className="flex flex-col transition-all duration-300 ease-smooth hover:shadow-2xl hover:-translate-y-2">
+            <Card key={program.title} className="flex flex-col transition-all duration-300 ease-smooth hover:shadow-2xl hover:-translate-y-2 active:shadow-2xl active:-translate-y-2">
               <CardHeader className="p-6">
                 <CardTitle className="font-headline text-2xl">{program.title}</CardTitle>
                 <CardDescription className="pt-2 text-base text-foreground/70">{program.description}</CardDescription>

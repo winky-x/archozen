@@ -46,9 +46,9 @@ export default function GalleryExperience() {
                 width={image.width}
                 height={image.height}
                 data-ai-hint={image.dataAiHint}
-                className="w-full h-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-110 group-active:scale-110"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 group-active:bg-black/40 transition-colors duration-300" />
             </div>
           ))}
         </div>

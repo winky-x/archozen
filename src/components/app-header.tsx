@@ -42,7 +42,7 @@ export default function AppHeader() {
     <a
       href={href}
       onClick={onClick}
-      className={cn("font-body text-sm font-medium text-foreground/80 transition-colors hover:text-primary", className)}
+      className={cn("font-body text-sm font-medium text-foreground/80 transition-colors hover:text-primary active:text-primary", className)}
     >
       {label}
     </a>
@@ -89,7 +89,7 @@ export default function AppHeader() {
                             <a
                               href={link.href}
                               onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center justify-between py-3 px-2 rounded-md text-base font-medium text-foreground hover:bg-accent"
+                              className="flex items-center justify-between py-3 px-2 rounded-md text-base font-medium text-foreground hover:bg-accent active:bg-accent"
                             >
                               <span>{link.label}</span>
                               <ChevronRight className="h-5 w-5 text-muted-foreground" />
