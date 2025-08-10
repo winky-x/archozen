@@ -19,8 +19,8 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
-const leftLinks = navLinks.slice(0, 2);
-const rightLinks = navLinks.slice(2);
+const leftLinks = navLinks.slice(0, 3);
+const rightLinks = navLinks.slice(3);
 
 export default function AppHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -104,14 +104,14 @@ export default function AppHeader() {
                   </div>
               </SheetContent>
             </Sheet>
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex items-center justify-end gap-6 w-full">
               {leftLinks.map((link) => (
                 <NavLink key={link.href} {...link} />
               ))}
             </nav>
           </div>
           
-          <div className="flex flex-1 justify-center">
+          <div className="flex flex-1 justify-center w-1/3">
              <a href="#" className="flex items-center gap-2">
               {mounted ? (
                   <Image src={logoSrc} alt="ArchoZen Academy Logo" width={40} height={40} className="h-8 w-auto" />
@@ -121,14 +121,16 @@ export default function AppHeader() {
             </a>
           </div>
 
-          <div className="flex items-center justify-end gap-6 w-1/3">
-            <nav className="hidden md:flex items-center gap-6">
+          <div className="flex items-center justify-start gap-6 w-1/3">
+            <nav className="hidden md:flex items-center gap-6 w-full">
               {rightLinks.map((link) => (
                 <NavLink key={link.href} {...link} />
               ))}
             </nav>
-            <Button variant="outline" className="hidden md:inline-flex">Dashboard</Button>
-            <ThemeToggle />
+            <div className="flex items-center justify-end flex-1">
+                <Button variant="outline" className="hidden md:inline-flex mr-2">Dashboard</Button>
+                <ThemeToggle />
+            </div>
           </div>
         </div>
       </div>
