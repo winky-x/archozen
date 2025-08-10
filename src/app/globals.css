@@ -95,7 +95,7 @@ body {
 .gradient-border-glow {
     position: relative;
     border-radius: 1.25rem; /* Corresponds to rounded-xl */
-    padding: 1px;
+    padding: 4px;
     background-color: transparent;
     overflow: hidden;
 }
@@ -114,13 +114,46 @@ body {
     transform-origin: center center;
     transform: translate(-50%, -50%);
     animation: spin 5s linear infinite;
-    filter: blur(8px);
+    filter: blur(20px);
 }
 
 .gradient-border-glow > * {
     position: relative;
     z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
+
+.gradient-border-glow-thin {
+    position: relative;
+    border-radius: 9999px; 
+    padding: 2px;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.gradient-border-glow-thin::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 180deg at 50% 50%,
+        #87F5F5, #7226FF, #F042FF, #87F5F5
+    );
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+    animation: spin 5s linear infinite;
+    filter: blur(8px);
+}
+
+.gradient-border-glow-thin > * {
+    position: relative;
+    z-index: 1;
+}
+
 
 @keyframes spin {
     from {

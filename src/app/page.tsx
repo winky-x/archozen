@@ -42,7 +42,7 @@ export default function Home({}) {
         <section id="hero" className="relative w-full text-foreground pt-32 pb-20 md:pt-48 md:pb-32">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-block rounded-full p-px mb-6 gradient-border-glow">
+              <div className="inline-block rounded-full p-px mb-6 gradient-border-glow-thin">
                 <div className="bg-background rounded-full px-4 py-1.5">
                   <span className="font-medium text-sm">Now supercharged with ArchoZen</span>
                 </div>
