@@ -5,23 +5,30 @@ import { Button } from "./ui/button";
 
 const coaches = [
   {
-    name: "Elias Vance",
+    name: "Alisha",
     title: "Head Coach & Founder",
-    bio: "With over 20 years of competitive archery experience, Elias founded ArchoZen to share his passion for the sport's mental and physical discipline.",
+    bio: "With over 20 years of competitive archery experience, Alisha founded ArchoZen to share her passion for the sport's mental and physical discipline.",
     image: "/coaches/coach-1.png",
     socials: { twitter: "#", linkedin: "#" },
   },
   {
-    name: "Seraphina Moon",
+    name: "Neena",
     title: "Recurve Specialist",
-    bio: "An Olympian archer, Seraphina specializes in the recurve bow, focusing on precision form and mental stillness under pressure.",
+    bio: "An Olympian archer, Neena specializes in the recurve bow, focusing on precision form and mental stillness under pressure.",
     image: "/coaches/coach-1.png",
     socials: { twitter: "#", linkedin: "#" },
   },
   {
-    name: "Kenji Tanaka",
+    name: "Yuvraj",
     title: "Kyudo Master",
-    bio: "A master of the traditional Japanese art of Kyudo, Kenji brings a meditative and spiritual approach to the practice of archery.",
+    bio: "A master of the traditional Japanese art of Kyudo, Yuvraj brings a meditative and spiritual approach to the practice of archery.",
+    image: "/coaches/coach-1.png",
+    socials: { twitter: "#", linkedin: "#" },
+  },
+  {
+    name: "Ahad",
+    title: "Compound Bow Expert",
+    bio: "Ahad is a specialist in modern compound bows, focusing on technical precision and equipment tuning for peak performance.",
     image: "/coaches/coach-1.png",
     socials: { twitter: "#", linkedin: "#" },
   },
@@ -37,7 +44,7 @@ export default function CoachSpotlight() {
             Our world-class instructors are dedicated to helping you achieve your archery goals.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {coaches.map((coach) => (
             <div key={coach.name} className="group overflow-hidden rounded-xl">
               <Card className="h-full flex flex-col text-center items-center p-6 transition-all duration-300 ease-smooth">
